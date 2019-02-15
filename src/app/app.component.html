@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<input (click)="logout()" type="button" value="Logout" id="logout"/>
+<br/>
+<div>
+    <label for="toggleDdos">
+        <input [checked]="isDdosOn" (change)="toggleDdos()" type="checkbox" id="toggleDdos">Toggle Ddos
+    </label>
+</div>
+<div *ngIf="isDdosOn">
+  <label for="frequency">Ddos Frequency(per sec)
+    <input type="number" id="frequency" [(ngModel)]="frequency"/>
+  </label>
+  <input type="button" value="Clear" (click)="clearActions()"/>
+</div>
+
+
+<iframe id="ifm" name="ifm" width="100%" style="min-height: 740px" frameborder="0" src="http://localhost:8083/app/main#/dashboards/5afecf304f95de6388cc5f71/?embed=true" scrolling="auto"></iframe>
+<div class="insert-actions">
+  <div *ngFor="let action of actions">
+    <h3>{{action.dateTime}}</h3>
+  </div>
+</div>
